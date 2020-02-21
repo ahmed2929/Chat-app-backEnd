@@ -3,6 +3,7 @@ const http=require('http');
 const socket =require('socket.io');
 const route=require('./route')
 const helpers=require('./users');
+const cors=require('cors')
 
 const port =process.env.PORT||5000
 const app=express();
@@ -60,5 +61,5 @@ server.listen(port,()=>{
 
 
 
-
+app.use(cors());
 app.use(route)
